@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --font-code: "Source Code Pro", monospace;
+
+        --background: #242424;
+        --foreground: #ffffffde;
+
+        --primary: #646cff;
+        --hover: #535bf2;
+
+        --secondary: #f3f4f6;
+
+        --destructive: #ef4444;
+
+        --border: #e5e7eb;
+        --border-dark: #6b7280;
+    }
+}
+
+/* Light color scheme:
+ * prefers-color-scheme: light
+ 
+    --background: #ffffff;
+    --foreground: #213547;
+    --primary: #646cff;
+    --hover: #747bff;
+    --secondary: #f3f4f6;
+    --destructive: #ef4444;
+    --border: #e5e7eb;
+*/
+
+@layer base {
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+    }
+
+    * {
+        scroll-behavior: smooth;
+    }
+
+    #root {
+        @apply flex min-h-screen flex-col justify-between;
+    }
+}
