@@ -1,10 +1,10 @@
 import PageTemplate from "@comp/page-template";
-import AnimatedTab from "@comp/animated-tab";
+import MagnifiedDock from "@comp/magnified-dock";
 
 const reference = [
     {
         name: "Sam Selikoff tutorial",
-        url: "https://youtu.be/kep_Iaxuzy0?si=z0ODiEfvR5MwALNr",
+        url: "https://youtu.be/JV5BlbRy_mg?si=lTfbVAsWUrZBWbVR",
     },
     {
         name: "Tailwind CSS",
@@ -16,17 +16,18 @@ const reference = [
     },
 ];
 
-const AnimatedTabPage = () => {
+const MagnifiedDockPage = () => {
     return (
         <PageTemplate
-            title="Animated tab"
-            location="src/components/animated-tab.tsx"
+            title="Magnified dock"
+            description="A recreation of the Mac OS dock with magnification"
+            location="src/components/magnified-dock.tsx"
             bigScreen
             reference={reference}
         >
-            <AnimatedTab />
+            <MagnifiedDock />
         </PageTemplate>
     );
 };
 
-export default AnimatedTabPage;
+export default MagnifiedDockPage;

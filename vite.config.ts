@@ -11,6 +11,7 @@ export default defineConfig({
             "@comp": path.resolve(__dirname, "src/components"),
             "@ui": path.resolve(__dirname, "src/components/ui"),
             "@page": path.resolve(__dirname, "src/pages/"),
+            "@hook": path.resolve(__dirname, "src/hooks/"),
         },
     },
     base: "/react-component/",

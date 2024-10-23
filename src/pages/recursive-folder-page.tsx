@@ -1,6 +1,6 @@
 import type { Folder } from "@/types";
 
-import PageTemplate from "@page/page-template";
+import PageTemplate from "@comp/page-template";
 import RecursiveFolder from "@comp/recursive-folder";
 
 const folders: Folder[] = [
@@ -157,6 +157,10 @@ const reference = [
         name: "Tailwind CSS",
         url: "https://tailwindcss.com/docs",
     },
+    {
+        name: "Framer Motion",
+        url: "https://www.framer.com/motion/",
+    },
 ];
 
 const RecursiveFolderPage = () => {
@@ -166,7 +170,8 @@ const RecursiveFolderPage = () => {
             location="src/components/recursive-folder.tsx"
             reference={reference}
         >
-            <ul>
+            
+            <ul className="w-full md:w-1/2">
                 {folders.map((folder, idx) => (
                     <RecursiveFolder
                         folder={folder}

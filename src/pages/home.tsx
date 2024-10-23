@@ -2,9 +2,13 @@ import { IoPencilOutline } from "react-icons/io5";
 
 import reactLogo from "@/assets/react.svg";
 
+import PageTitle from "@comp/page-title";
+
 function Home() {
     return (
         <div className="container min-h-96 pt-24 text-center">
+            <PageTitle title="Useful React Components" />
+
             <h1 className="h1">Useful React Components</h1>
 
             <div className="mt-2 flex items-center justify-center space-x-4">
@@ -27,7 +31,7 @@ function Home() {
             <img
                 src={reactLogo}
                 alt="React Logo"
-                className="animate-spin-slow mx-auto mt-8 w-32"
+                className="mx-auto mt-8 w-32 animate-spin-slow"
             />
 
             <p className="h6 mt-8">

@@ -1,6 +1,8 @@
 import { useRouteError, useLocation, Link } from "react-router-dom";
 
-const Error = () => {
+import PageTitle from "@comp/page-title";
+
+const ErrorPage = () => {
     const error = useRouteError();
     console.log(error);
 
@@ -8,6 +10,8 @@ const Error = () => {
 
     return (
         <div className="container flex min-h-72 flex-col items-center justify-center gap-4 sm:min-h-96">
+            <PageTitle title="404 Not Found | URC" />
+
             <h1 className="font-code text-[100px] leading-none sm:text-[120px]">
                 404
             </h1>
@@ -21,7 +25,7 @@ const Error = () => {
 
             <Link
                 to="/"
-                className="mt-8 text-xl font-bold text-primary duration-300 ease-in-out hover:tracking-widest"
+                className="mt-8 text-xl font-bold duration-300 ease-in-out hover:tracking-widest"
             >
                 Back to Home
             </Link>
@@ -29,4 +33,4 @@ const Error = () => {
     );
 };
 
-export default Error;
+export default ErrorPage;
