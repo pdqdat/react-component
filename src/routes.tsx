@@ -10,6 +10,8 @@ import ErrorPage from "@page/error-page";
 import RecursiveFolderPage from "@page/recursive-folder-page";
 import AnimatedTabPage from "@page/animated-tab-page";
 import MagnifiedDockPage from "@page/magnified-dock-page";
+import StreamingTextPage from "@page/streaming-text-page";
+
 import TestPage from "@page/test-page";
 
 const navigationLinks: {
@@ -38,6 +40,12 @@ const navigationLinks: {
         element: <MagnifiedDockPage />,
     },
     {
+        path: "/streaming-text",
+        label: "Streaming text",
+        element: <StreamingTextPage />,
+    },
+
+    {
         path: "/test",
         label: "Test",
         element: <TestPage />,
@@ -57,7 +65,7 @@ const router = createBrowserRouter(
             ],
         },
     ],
-    { basename: "/react-component" },
+    // { basename: "/react-component" },
 );
 
 export { router, navigationLinks };

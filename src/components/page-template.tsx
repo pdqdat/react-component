@@ -8,7 +8,7 @@ interface PageTemplateProps {
     children?: React.ReactNode;
     title: string;
     description?: string;
-    location?: string;
+    location?: string | string[];
     bigScreen?: boolean;
     reference?: {
         name: string;
@@ -59,7 +59,15 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
                 <section id="location" className="scroll-mt-8">
                     <h4 className="h4">Location</h4>
 
-                    <p className="h6">{location}</p>
+                    {Array.isArray(location) ? (
+                        location.map((loc, idx) => (
+                            <p key={idx} className="h6">
+                                {loc}
+                            </p>
+                        ))
+                    ) : (
+                        <p className="h6">{location}</p>
+                    )}
                 </section>
             )}
 

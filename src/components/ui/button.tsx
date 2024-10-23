@@ -10,12 +10,12 @@ interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, "type"> {
 }
 
 const buttonVariants = {
-    base: "h-10 px-4 py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    base: "focus-visible:ring-ring inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
     variants: {
-        default: "bg-primary hover:bg-primary/90",
-        secondary: "bg-secondary text-background hover:bg-secondary/90",
+        default: "bg-primary hover:bg-primary-hover",
+        secondary: "bg-secondary text-background hover:bg-secondary-hover",
         destructive: "bg-destructive hover:bg-destructive/90",
-        outline: "border border-input bg-background",
+        outline: "border border-input bg-none",
     },
 };
 

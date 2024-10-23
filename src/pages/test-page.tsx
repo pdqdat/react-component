@@ -2,6 +2,8 @@ import PageTemplate from "@comp/page-template";
 import Button from "@ui/button";
 import PageTitle from "@comp/page-title";
 
+import { toast } from "react-toastify";
+
 const TestPage = () => {
     return (
         <PageTemplate
@@ -10,7 +12,13 @@ const TestPage = () => {
         >
             <PageTitle title="Dat Phan is testing things..." />
 
-            <Button onClick={() => alert("You clicked a button")}>
+            <Button
+                onClick={() =>
+                    toast.info("You clicked a button", {
+                        autoClose: 3000,
+                    })
+                }
+            >
                 A button
             </Button>
         </PageTemplate>

@@ -11,10 +11,15 @@ export default {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
 
-                primary: "var(--primary)",
-                hover: "var(--hover)",
+                primary: {
+                    DEFAULT: "var(--primary)",
+                    hover: "var(--primary-hover)",
+                },
 
-                secondary: "var(--secondary)",
+                secondary: {
+                    DEFAULT: "var(--secondary)",
+                    hover: "var(--secondary-hover)",
+                },
 
                 destructive: "var(--destructive)",
 
@@ -22,6 +27,8 @@ export default {
                     DEFAULT: "var(--border)",
                     dark: "var(--border-dark)",
                 },
+
+                ring: "var(--ring)",
             },
             fontFamily: {
                 code: "var(--font-code)",

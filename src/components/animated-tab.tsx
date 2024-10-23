@@ -18,7 +18,7 @@ const AnimatedTab = () => {
                 <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`relative rounded-full px-3 py-1.5 font-medium outline-2 outline-hover focus-visible:outline ${
+                    className={`relative rounded-full px-3 py-1.5 font-medium outline-2 outline-primary-hover focus-visible:outline ${
                         activeTab === tab.id
                             ? "text-background dark:text-foreground"
                             : "hover:opacity-50"
