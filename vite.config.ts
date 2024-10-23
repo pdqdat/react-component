@@ -14,5 +14,5 @@ export default defineConfig({
             "@hook": path.resolve(__dirname, "src/hooks/"),
         },
     },
-    // base: "/react-component/",
+    base: "/react-component/",
 });

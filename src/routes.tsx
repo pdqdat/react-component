@@ -65,7 +65,7 @@ const router = createBrowserRouter(
             ],
         },
     ],
-    // { basename: "/react-component" },
+    { basename: "/react-component" },
 );
 
 export { router, navigationLinks };
