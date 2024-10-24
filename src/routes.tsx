@@ -1,6 +1,6 @@
 import React from "react";
 
-import { createHashRouter, } from "react-router-dom";
+import { createBrowserRouter} from "react-router-dom";
 
 import Layout from "@/layout";
 
@@ -57,7 +57,7 @@ const navigationLinks: {
     },
 ];
 
-const router = createHashRouter(
+const router = createBrowserRouter(
     [
         {
             element: <Layout />,
