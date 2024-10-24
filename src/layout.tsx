@@ -5,12 +5,22 @@ import { PiLineVerticalBold } from "react-icons/pi";
 import { TbTestPipe } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 
+import slugify from "@/utils/slugify";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Button from "@ui/button";
 
 const Layout = () => {
+    const trimmedAndSortedLinks = navigationLinks
+        // Remove the home from the navigation
+        .filter(({ label }) => label !== "Home")
+        // Remove the test page from the navigation
+        .filter(({ label }) => label !== "Test")
+        // Sort the navigation links by label alphabetically
+        .sort((a, b) => a.label.localeCompare(b.label));
+
     return (
         <>
             <div>
@@ -29,32 +39,20 @@ const Layout = () => {
 
                             <nav>
                                 <ul className="flex space-x-8 font-semibold">
-                                    {navigationLinks
-                                        // Remove the home from the navigation
-                                        .filter(({ path }) => path !== "/")
-                                        // Remove the test page from the navigation
-                                        .filter(({ path }) => path !== "/test")
-                                        // Sort the navigation links by label alphabetically
-                                        .sort((a, b) =>
-                                            a.label.localeCompare(b.label),
-                                        )
-                                        // Render the navigation links
-                                        .map(({ path, label }) => (
-                                            <li key={path}>
-                                                <NavLink
-                                                    to={path}
-                                                    className={({
-                                                        isActive,
-                                                    }) =>
-                                                        isActive
-                                                            ? "text-primary"
-                                                            : ""
-                                                    }
-                                                >
-                                                    {label}
-                                                </NavLink>
-                                            </li>
-                                        ))}
+                                    {trimmedAndSortedLinks.map(({ label }) => (
+                                        <li key={label}>
+                                            <NavLink
+                                                to={`/${slugify(label)}`}
+                                                className={({ isActive }) =>
+                                                    isActive
+                                                        ? "text-primary"
+                                                        : ""
+                                                }
+                                            >
+                                                {label}
+                                            </NavLink>
+                                        </li>
+                                    ))}
                                 </ul>
                             </nav>
                         </div>

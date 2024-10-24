@@ -35,7 +35,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
             <section>
                 <h2 className="h2 mb-2 font-bold">{title}</h2>
 
-                {description && <p className="h6">{description}</p>}
+                {description && <p className="h6 font-medium">{description}</p>}
             </section>
 
             {/* Demo section */}

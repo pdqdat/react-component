@@ -1,8 +1,10 @@
 import React from "react";
 
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter, } from "react-router-dom";
 
 import Layout from "@/layout";
+
+import slugify from "@/utils/slugify";
 
 import Home from "@page/home";
 import ErrorPage from "@page/error-page";
@@ -11,55 +13,58 @@ import RecursiveFolderPage from "@page/recursive-folder-page";
 import AnimatedTabPage from "@page/animated-tab-page";
 import MagnifiedDockPage from "@page/magnified-dock-page";
 import StreamingTextPage from "@page/streaming-text-page";
+import HighlightPanelPage from "@page/highlight-panel-page";
+import AnimatedNumberPage from "@page/animated-number-page";
 
 import TestPage from "@page/test-page";
 
 const navigationLinks: {
-    path: string;
     label: string;
     element: React.JSX.Element;
 }[] = [
     {
-        path: "/",
         label: "Home",
         element: <Home />,
     },
     {
-        path: "/animated-tab",
         label: "Animated tab",
         element: <AnimatedTabPage />,
     },
     {
-        path: "/recursive-folder",
         label: "Recursive folder",
         element: <RecursiveFolderPage />,
     },
     {
-        path: "/magnified-dock",
         label: "Magnified dock",
         element: <MagnifiedDockPage />,
     },
     {
-        path: "/streaming-text",
         label: "Streaming text",
         element: <StreamingTextPage />,
     },
+    {
+        label: "Highlight panel",
+        element: <HighlightPanelPage />,
+    },
+    {
+        label: "Animated number",
+        element: <AnimatedNumberPage />,
+    },
 
     {
-        path: "/test",
         label: "Test",
         element: <TestPage />,
     },
 ];
 
-const router = createBrowserRouter(
+const router = createHashRouter(
     [
         {
             element: <Layout />,
             errorElement: <ErrorPage />,
             children: [
-                ...navigationLinks.map(({ path, element }) => ({
-                    path,
+                ...navigationLinks.map(({ label, element }) => ({
+                    path: label === "Home" ? "/" : `/${slugify(label)}`,
                     element,
                 })),
             ],

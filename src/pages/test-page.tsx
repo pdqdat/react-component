@@ -4,6 +4,8 @@ import PageTitle from "@comp/page-title";
 
 import { toast } from "react-toastify";
 
+import slugify from "@/utils/slugify";
+
 const TestPage = () => {
     return (
         <PageTemplate
@@ -21,6 +23,8 @@ const TestPage = () => {
             >
                 A button
             </Button>
+
+            <h1 className="h1">{`/${slugify("recursive folder")}`}</h1>
         </PageTemplate>
     );
 };
