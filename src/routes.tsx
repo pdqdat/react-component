@@ -1,21 +1,18 @@
 import React from "react";
-
-import { createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import Layout from "@/layout";
-
 import slugify from "@/utils/slugify";
-
 import Home from "@page/home";
 import ErrorPage from "@page/error-page";
-
 import RecursiveFolderPage from "@page/recursive-folder-page";
 import AnimatedTabPage from "@page/animated-tab-page";
 import MagnifiedDockPage from "@page/magnified-dock-page";
 import StreamingTextPage from "@page/streaming-text-page";
 import HighlightPanelPage from "@page/highlight-panel-page";
-import AnimatedNumberPage from "@page/animated-number-page";
-
+// import AnimatedNumberPage from "@page/animated-number-page";
+import SaveBtnPage from "@page/save-btn-page";
+import HamburgerPage from "@page/hamburger-page";
 import TestPage from "@page/test-page";
 
 const navigationLinks: {
@@ -46,9 +43,17 @@ const navigationLinks: {
         label: "Highlight panel",
         element: <HighlightPanelPage />,
     },
+    // {
+    //     label: "Animated number",
+    //     element: <AnimatedNumberPage />,
+    // },
     {
-        label: "Animated number",
-        element: <AnimatedNumberPage />,
+        label: "Save button",
+        element: <SaveBtnPage />,
+    },
+    {
+        label: "Hamburger",
+        element: <HamburgerPage />,
     },
 
     {
